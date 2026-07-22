@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Beauty Salon - Luxury Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            padding: 20px;
+            font-size: 16px;
+        }
+        
+        .page {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+            max-width: 8.5in;
+            height: 11in;
+            margin: 20px auto;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+            page-break-after: always;
+            border: 2px solid #d4af37;
+            color: white;
+        }
+        
+        /* Luxury marble texture overlay */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .page > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-section {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-section span {
+            font-style: italic;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        
+        .salon-text {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #d4af37;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .hours-banner {
+            background: #a52a2a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border: 2px solid #d4af37;
+        }
+        
+        .hours-banner::before {
+            content: '◆ ';
+            color: #d4af37;
+        }
+        
+        .hours-banner::after {
+            content: ' ◆';
+            color: #d4af37;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+        }
+        
+        th {
+            background: transparent;
+            color: #d4af37;
+            border-bottom: 2px solid #d4af37;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        th:last-child {
+            text-align: right;
+        }
+        
+        td {
+            background: transparent;
+            color: white;
+            border-bottom: 1px solid #d4af37;
+            border-left: 1px solid #d4af37;
+            border-right: 1px solid #d4af37;
+            padding: 10px;
+            font-size: 13px;
+        }
+        
+        td:first-child {
+            color: #d4af37;
+            font-weight: 500;
+        }
+        
+        td:last-child {
+            text-align: right;
+            color: #d4af37;
+            font-weight: bold;
+        }
+        
+        tr:last-child td {
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        /* Package styles */
+        .package-page {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .package-title {
+            font-size: 32px;
+            color: #d4af37;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .package-subtitle {
+            font-size: 18px;
+            color: white;
+            font-weight: normal;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .package-content {
+            text-align: left;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .package-item {
+            font-size: 15px;
+            color: #d4af37;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+            font-weight: 500;
+        }
+        
+        .package-price {
+            font-size: 48px;
+            color: #d4af37;
+            font-weight: bold;
+            margin-top: 50px;
+            letter-spacing: 2px;
+        }
+        
+        .website {
+            font-size: 12px;
+            color: #d4af37;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+        
+        @media print {
+            body { padding: 0; }
+            .page { margin: 0; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: BODY SPA -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Body Spa</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 60px;">30 Min</th>
+            <th style="width: 60px;">45 Min</th>
+            <th style="width: 60px;">60 Min</th>
+        </tr>
+        <tr>
+            <td>Full Body Spa</td>
+            <td>1500</td>
+            <td>1800</td>
+            <td>2200</td>
+        </tr>
+        <tr>
+            <td>Hot Oil Massage (Full Body)</td>
+            <td>1800</td>
+            <td>2200</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Pain Relief Hot Stone Massage</td>
+            <td>2000</td>
+            <td>2200</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Oil Base Foot Massage</td>
+            <td>800</td>
+            <td>1200</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Hot Stone Massage</td>
+            <td>1000</td>
+            <td>1500</td>
+            <td>1800</td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <th>Package Services</th>
+            <th style="width: 70px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Classic Body Spa</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Classic Oil Body Spa</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>Hot Stone with Oil Body Spa</td>
+            <td>6000</td>
+        </tr>
+        <tr>
+            <td>Relax & Rejuvenate Spa</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>Noor Signature Body Spa</td>
+            <td>10000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 2: ADD-ON MAKEOVER -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Add on Makeover</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 70px;">Regular</th>
+            <th style="width: 70px;">Add-on</th>
+        </tr>
+        <tr>
+            <td>Face Makeup</td>
+            <td>2000</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Sharee Draping</td>
+            <td>300</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Hijab set</td>
+            <td>300</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Lash set</td>
+            <td>300</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Dupatta set</td>
+            <td>300</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Lens set</td>
+            <td>300</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Fake nail set</td>
+            <td>300</td>
+            <td>300</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 3: HAIR COLOR -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Hair Color</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Stick</td>
+            <td>300-500</td>
+        </tr>
+        <tr>
+            <td>Funky Color Stick</td>
+            <td>1000-2000</td>
+        </tr>
+        <tr>
+            <td>Root Touch</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Global</td>
+            <td>4000-7000</td>
+        </tr>
+        <tr>
+            <td>Cap Stick</td>
+            <td>6000-9000</td>
+        </tr>
+        <tr>
+            <td>Cap Stick with Base</td>
+            <td>8000-12000</td>
+        </tr>
+        <tr>
+            <td>Ombre</td>
+            <td>8000-15000</td>
+        </tr>
+        <tr>
+            <td>Highlight</td>
+            <td>10000-12000</td>
+        </tr>
+        <tr>
+            <td>Balayage</td>
+            <td>12000-15000</td>
+        </tr>
+        <tr>
+            <td>Baby Lights</td>
+            <td>12000-15000</td>
+        </tr>
+        <tr>
+            <td>Foliage</td>
+            <td>14000-18000</td>
+        </tr>
+        <tr>
+            <td>Highlights with Base</td>
+            <td>16000-19000</td>
+        </tr>
+        <tr>
+            <td>Baby Lights with Base</td>
+            <td>16000-19000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 4: EYE LASH -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Eye Lash Extension</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Classic Eye Lash</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Lash Lifting</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Cat Eye</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>Doll Eye Lash</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>Wispy Eye</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Foxy Eye Lash</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Hybrid Eye Lash</td>
+            <td>4200</td>
+        </tr>
+        <tr>
+            <td>Mega Volume</td>
+            <td>5000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 5: HAIR TREATMENT -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Hair Treatment</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 60px;">Short</th>
+            <th style="width: 60px;">Medium</th>
+            <th style="width: 60px;">Long</th>
+        </tr>
+        <tr>
+            <td>Hair Wash</td>
+            <td>200</td>
+            <td>350</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Hot Oil Massage</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Ginger Treatment</td>
+            <td>1500</td>
+            <td>2500</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>Onion Treatment</td>
+            <td>1500</td>
+            <td>2500</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Organic protein treatment</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Smoothing Spa</td>
+            <td>1500</td>
+            <td>2000</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Keratin Spa Treatment</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Bond Repair</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Nano Treatment</td>
+            <td>2000</td>
+            <td>3500</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>Anti Hair Fall treatment</td>
+            <td>2500</td>
+            <td>4000</td>
+            <td>6000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 6: BRIDAL PACKAGE 1 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Bridal Package- 1</div>
+    <div class="package-subtitle">Engagement/ Akhd Look</div>
+    
+    <div class="package-content">
+        <div class="package-item">Eye Look</div>
+        <div class="package-item">Full Face Makeup ( Matte)</div>
+        <div class="package-item">Basic Hair Style</div>
+        <div class="package-item">Jewelry setting</div>
+        <div class="package-item">Dopatta/Hijab Setting</div>
+    </div>
+    
+    <div class="package-price">8000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 7: BRIDAL PACKAGE 2 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Bridal Package- 2</div>
+    <div class="package-subtitle">Engagement/ Akhd Look</div>
+    
+    <div class="package-content">
+        <div class="package-item">Double Cleansing Facial (Free)</div>
+        <div class="package-item">Neck Massage (Free)</div>
+        <div class="package-item">Glowy or Dewy Base Makeup (High End Products)</div>
+        <div class="package-item">Hand & Neck Makeup (Free)</div>
+        <div class="package-item">Dopatta/Hijab Setting/Sharee Draping/Lehenga Setting</div>
+        <div class="package-item">Hair Setting (Basic or Modern Style)</div>
+    </div>
+    
+    <div class="package-price">15000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 8: BRIDAL PACKAGE 3 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Bridal Package- 3</div>
+    <div class="package-subtitle">Wedding/ Reception</div>
+    
+    <div class="package-content">
+        <div class="package-item">Bridal Gold Facial (Free)</div>
+        <div class="package-item">Hand Massage with Brightening Cream (Free)</div>
+        <div class="package-item">Full Face Makeup & Trendy Eye Look with High End Products</div>
+        <div class="package-item">Hand & Neck Makeup</div>
+        <div class="package-item">Dopatta/Hijab Setting/Sharee Draping/Lehenga Setting</div>
+        <div class="package-item">Nail Extension with Nail Paint</div>
+        <div class="package-item">Customized Hair Style</div>
+    </div>
+    
+    <div class="package-price">20000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 9: BRIDAL PACKAGE 4 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Bridal Package- 4</div>
+    <div class="package-subtitle">Wedding/ Reception</div>
+    
+    <div class="package-content">
+        <div class="package-item">Red Rose Whitening Facial with Cherry Mask (Free)</div>
+        <div class="package-item">Eyebrow/Upper Lip Clean (Free)</div>
+        <div class="package-item">Pakistani Inspired Makeup with Kashee's Products</div>
+        <div class="package-item">Pakistani Glittering Eye Look</div>
+        <div class="package-item">Dopatta/Hijab Setting/Sharee Draping/Lehenga Setting</div>
+        <div class="package-item">Jewelry Setting & Hand Makeup</div>
+        <div class="package-item">Customized Hair Style with Extension</div>
+    </div>
+    
+    <div class="package-price">25000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 10: BRIDAL PACKAGE 5 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Bridal Package- 5</div>
+    <div class="package-subtitle">Wedding/ Reception</div>
+    
+    <div class="package-content">
+        <div class="package-item">Korean Glass Skin Facial (Vitamin-C/Sakura Mask) (Free)</div>
+        <div class="package-item">Bridal Whitening Pedicure & Manicure (Free)</div>
+        <div class="package-item">Customized Makeup Look with High End Products</div>
+        <div class="package-item">Dopatta/Hijab Setting/Sharee Draping/Lehenga Setting</div>
+        <div class="package-item">Customized Hair Style with Extension</div>
+        <div class="package-item">Hand & Neck Makeup</div>
+        <div class="package-item">Nail Extension & Volume Eye Lash</div>
+    </div>
+    
+    <div class="package-price">30000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 11: PEDICURE/MANICURE -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Pedicure & Manicure</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Classic Pedi/Mani</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Beetroot Pedi/Mani</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Whitening Pedi & Mani</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Crystal Pedi & Mani</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Hot Stone Pedi/Mani</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>D-light Pedi/Mani</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Russian Paraffin Pedi/Mani</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>Turkish Pedi/Mani</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Hydra Boost Premium Pedi/Mani</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Premium Red Rose Pedi/Mani</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Premium Arabic Pedi/Mani</td>
+            <td>5000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 12: WAXING -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Waxing</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Eye Brow Wax</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Upper Lip Wax</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Chin Wax</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Under Arm Wax</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Half Leg Wax</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>Half Hand Wax</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>Full Face Wax</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Full Leg Wax</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Full Hand Wax</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Bikini Wax</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Brazilian with Bikini</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Full Body with Bikini</td>
+            <td>7000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 13: NAIL EXTENSION -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Nail Extension</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Foil/Glitter/Shimmer Add-on (2H)</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Nail Extension Only (2H)</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>One Color Gel Extension</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>French Nail Extension (2H)</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Poly Acrylic Gel Extension (2H)</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Magnetic Gel Extension (2H)</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Gel with Shimmer/Glitter/Stone (2H)</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Acrylic Powder Extension (2H)</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Flower/Stone/Pearl Add-on (2H)</td>
+            <td>1000-2000</td>
+        </tr>
+        <tr>
+            <td>Disco Glitter/Blooming Gel Add-on</td>
+            <td>500-2000</td>
+        </tr>
+        <tr>
+            <td>3D Art Add-on (2H)</td>
+            <td>500-3000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 14: THREADING -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Threading</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Forehead</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eye Brow</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Upper Lip</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Upper Lip with Chin</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Chin</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Full Face</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Full Face with Eyebrow</td>
+            <td>600</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 15: HAIR SETTING -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Hair Setting</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 60px;">Short</th>
+            <th style="width: 60px;">Medium</th>
+            <th style="width: 60px;">Long</th>
+        </tr>
+        <tr>
+            <td>Hair Ornaments</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Front Setting</td>
+            <td>600</td>
+            <td>600</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Normal Bun</td>
+            <td>800</td>
+            <td>800</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td>Hair Flower</td>
+            <td>1000</td>
+            <td>1000</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Messy Bun</td>
+            <td>1200</td>
+            <td>1200</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>Front Braid</td>
+            <td>1500</td>
+            <td>1500</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Pincer Braid</td>
+            <td>1500</td>
+            <td>1500</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Ringless</td>
+            <td>1500</td>
+            <td>1500</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Ring Braid</td>
+            <td>1500</td>
+            <td>1500</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Side Bun</td>
+            <td>1500</td>
+            <td>1500</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Hair Iron</td>
+            <td>2000</td>
+            <td>2000</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Blow Dry</td>
+            <td>2000</td>
+            <td>2000</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Hair Curl</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Hair Wave</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>4000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 16: SHINE SET -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Shine Set - Premium Hair Treatments</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 60px;">Short</th>
+            <th style="width: 60px;">Medium</th>
+            <th style="width: 60px;">Long</th>
+        </tr>
+        <tr>
+            <td>Keratin Treatment</td>
+            <td>12000</td>
+            <td>16000</td>
+            <td>20000</td>
+        </tr>
+        <tr>
+            <td>L'oreal Advance Treatment</td>
+            <td>12000</td>
+            <td>18000</td>
+            <td>25000</td>
+        </tr>
+        <tr>
+            <td>R.P Treatment</td>
+            <td>12000</td>
+            <td>18000</td>
+            <td>25000</td>
+        </tr>
+        <tr>
+            <td>Brazilian Botox Treatment</td>
+            <td>15000</td>
+            <td>18000</td>
+            <td>22000</td>
+        </tr>
+        <tr>
+            <td>Premium Omega Treatment</td>
+            <td>17000</td>
+            <td>22000</td>
+            <td>27000</td>
+        </tr>
+        <tr>
+            <td>Premium Nano Plastia</td>
+            <td>20000</td>
+            <td>25000</td>
+            <td>30000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 17: FACIALS -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Facial</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Deep Purifying Facial</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Fruit Facial</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Whitening Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Vitamin-C Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>D-Tan Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Bright & Shine Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Facial with Glow Boost Pack</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Ayurvedic Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Red Rose Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Pink Glossy Facial</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>24 Carat Foil Gold Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Diamond Silk Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Elegant Pearl Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Clarity Ozone Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Clove Acne Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Hydro Jelly Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Lavender Extract Facial</td>
+            <td>2500</td>
+        </tr>
+        <tr>
+            <td>Therma Herb Facial</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Blue Lotus Facial</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Vampire/Skin Revamp Facial</td>
+            <td>3000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 18: GLOW POLISH -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Glow Polish</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Back Massage with Glow Polish</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Back Facial with Glow Polish</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Bikini Brightening with Glow Polish</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Neck Brightening with Glow Polish</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Underarm Brightening with Glow Polish</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Full Face Polish</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Half Hand & Leg Polish</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>Full Hand & Leg Polish</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Full Back Polish</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Full Body Glow Polish</td>
+            <td>6000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 19: CORPORATE & SPECIAL OFFERS -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Corporate Offer</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Smooth & Silky Hair Spa Corporate Offer</td>
+            <td>4500</td>
+        </tr>
+    </table>
+    
+    <div class="category-title" style="margin-top: 30px;">Teenage Package</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Under Arm Wax + Soft Face Cleansing + Sparkling Pedi & Mani</td>
+            <td>2500</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 20: MAKEUP & PRINCESS PACKAGE -->
+<div class="page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+        <div class="hours-banner">OPEN 11:00 - 21:00 EVERYDAY</div>
+    </div>
+    
+    <div class="category-title">Makeup Packages</div>
+    
+    <table>
+        <tr>
+            <th>Package</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Simple Look</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>Elegant Look</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>Gorgeous Glam</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>Base Preparation</td>
+            <td>10000</td>
+        </tr>
+    </table>
+    
+    <div class="category-title" style="margin-top: 30px;">Princess Package</div>
+    
+    <table>
+        <tr>
+            <th>Service</th>
+            <th style="width: 80px; text-align: right;">Price(BDT)</th>
+        </tr>
+        <tr>
+            <td>Complete Princess Makeover</td>
+            <td>1500</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PAGE 21: PRE-WEDDING PACKAGE 1 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Pre-Wedding Package - 1</div>
+    <div class="package-subtitle">Petal Touch Bridal Care</div>
+    
+    <div class="package-content">
+        <div class="package-item">Glossy Gel Finish Pedicure & Manicure</div>
+        <div class="package-item">Full Face Threading & Soft Massage</div>
+        <div class="package-item">Crystal Bright Skin Polish Facial</div>
+        <div class="package-item">Underarm Wax & Full Hand, Arm Wax</div>
+        <div class="package-item">Warm Essence Oil Scalp Therapy Hair Treatment</div>
+    </div>
+    
+    <div class="package-price">5000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 22: PRE-WEDDING PACKAGE 2 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Pre-Wedding Package - 2</div>
+    <div class="package-subtitle">Bride to be Glam Ritual</div>
+    
+    <div class="package-content">
+        <div class="package-item">Aqua Spa with Warm Paraffin Foot Therapy Pedicure</div>
+        <div class="package-item">Aqua Spa and Warm Paraffin Manicure</div>
+        <div class="package-item">Hydro Dewy Glass & Instant Bright Facial</div>
+        <div class="package-item">Moisture Shine Hair Bath</div>
+        <div class="package-item">Underarms & Full Hand & Full Leg Wax</div>
+        <div class="package-item">Hair Cut (Any) with Blow Dry</div>
+    </div>
+    
+    <div class="package-price">10000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 23: PRE-WEDDING PACKAGE 3 -->
+<div class="page package-page">
+    <div class="header">
+        <div class="logo-section">NOOR <span>Beauty</span></div>
+        <div class="salon-text">SALON</div>
+    </div>
+    
+    <div class="package-title">Pre-Wedding Package - 3</div>
+    <div class="package-subtitle">Signature Luxury Bridal Experience</div>
+    
+    <div class="package-content">
+        <div class="package-item">Paris French Tip Manicure</div>
+        <div class="package-item">Royal Foot Relaxation & Refresh Pedicure</div>
+        <div class="package-item">Tan Clear & Golden Radiance Bridal Facial</div>
+        <div class="package-item">Hair Strength Rebuild Therapy Treatment</div>
+        <div class="package-item">Full Body Wax, Soft Cleansing / or Full Body Glowing Polish</div>
+        <div class="package-item">Smooth & Glowy Back Shine Treatment</div>
+    </div>
+    
+    <div class="package-price">15000 BDT</div>
+    <div class="website">www.noor-salon.com</div>
+</div>
+
+<!-- PAGE 24: THANK YOU -->
+<div class="page">
+    <div style="text-align: center; padding-top: 180px;">
+        <div class="logo-section" style="font-size: 36px;">THANK YOU</div>
+        <p style="color: #d4af37; font-size: 16px; margin-top: 40px; letter-spacing: 2px;">FOR CHOOSING NOOR BEAUTY SALON</p>
+        
+        <div style="border-top: 2px solid #d4af37; border-bottom: 2px solid #d4af37; padding: 30px; margin-top: 60px;">
+            <p style="color: #d4af37; font-size: 18px; font-weight: bold; margin: 10px 0;">📞 01711726728</p>
+            <p style="color: white; font-size: 14px; margin: 15px 0;">1/1 ABC Mehzabeen Square, 3rd Floor</p>
+            <p style="color: white; font-size: 14px; margin: 5px 0;">Kafrul, Dhaka</p>
+        </div>
+        
+        <p style="color: #a52a2a; font-size: 16px; font-weight: bold; margin-top: 40px; letter-spacing: 2px;">OPEN 11:00 - 21:00 EVERYDAY</p>
+    </div>
+</div>
+
+</body>
+</html>
